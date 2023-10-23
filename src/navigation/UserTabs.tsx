@@ -1,7 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import FeedbackScreens from "../screens/StudentRole/FeedBackScreens";
-import GradeScreens from "../screens/StudentRole/GradeScreens";
-import MaterialsScreens from "../screens/StudentRole/MaterialsScreens";
+import DepositScreens from "../screens/AccountUser/DepositScreens";
+import DebitScreens from "../screens/AccountUser/DebitScreens";
+import SettingScreens from "../screens/AccountUser/SettingScreens";
+import MainScreens from "../screens/AccountUser/MainScreens";
 import Colors from "../components/Color";
 import { FontAwesome } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -16,53 +17,43 @@ import Icon from "../components/Icon";
 import * as Animatable from "react-native-animatable";
 import { useRef, useEffect } from "react";
 import { GestureResponderEvent } from "react-native-modal/dist/types";
-import AttendanceScreens from "../screens/TeacherRole/AttendanceScreens";
-import LessonStack from "./LessonStack";
-import { Ionicons } from '@expo/vector-icons';
-import StudentList from "../screens/TeacherRole/StudentList";
+import ApplicationScreens from "../screens/AccountUser/ApplicationScreens";
 
 const TabArr = [
   {
-    route: "Lesson",
-    label: "Lesson",
+    route: "Home",
+    label: "Home",
     type: FontAwesome,
     icon: "tasks",
-    component: LessonStack,
+    component: MainScreens,
   },
   {
-    route: "Materials",
-    label: "Materials",
+    route: "Application",
+    label: "Application",
     type: MaterialCommunityIcons,
     icon: "material-design",
-    component: MaterialsScreens,
+    component:ApplicationScreens,
   },
   {
-    route: "Attendance",
-    label: "Attendance",
-    type: Ionicons,
-    icon: "person",
-    component: AttendanceScreens,
-  },
-  {
-    route: "Student List",
-    label: "Student List",
-    type: MaterialIcons,
-    icon: "list-alt",
-    component: StudentList,
-  },
-  {
-    route: "Grade",
-    label: "Grade",
-    type: MaterialIcons,
-    icon: "grade",
-    component: GradeScreens,
-  },
-  {
-    route: "Feedback",
-    label: "Feedback",
+    route: "Deposit",
+    label: "Deposit",
     type: MaterialIcons,
     icon: "feedback",
-    component: FeedbackScreens,
+    component: DepositScreens,
+  },
+  {
+    route: "Debit",
+    label: "Debit",
+    type: MaterialIcons,
+    icon: "grade",
+    component: DebitScreens,
+  },
+  {
+    route: "Setting",
+    label: "Setting",
+    type: MaterialIcons,
+    icon: "list-alt",
+    component: SettingScreens,
   },
 ];
 const Tab = createBottomTabNavigator();
@@ -136,7 +127,7 @@ const TabButton = (props: Props) => {
   );
 };
 
-export default function TeacherTabs() {
+export default function UserTabs() {
   return (
     <Tab.Navigator
       screenOptions={{

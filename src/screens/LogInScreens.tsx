@@ -33,7 +33,7 @@ const LogInScreens = ({ navigation }: any) => {
           backgroundColor="#341c26"
           color={"#fefae0"}
           width={"80%"}
-          onPress={() => navigation.navigate("ChooseRole")}
+          onPress={() => navigation.navigate("Drawer")}
         >
           Login
         </CustomButton>

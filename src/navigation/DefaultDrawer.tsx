@@ -6,7 +6,6 @@ import {
 } from "@react-navigation/drawer";
 import CalendarScreens from "../screens/CalendarScreens";
 import TwoScreenStack from "./HomeScreenStack";
-import { Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";

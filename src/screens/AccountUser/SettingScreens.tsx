@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import ClassInfoHeader from "../../components/ClassInfoHeader";
 
-const PracticeScreens = ({ navigation }: any) => {
+const SettingScreens = ({ navigation }: any) => {
   const topMotion = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
   const rotation = useRef(new Animated.Value(0)).current;
   const onLongPress = () => {
@@ -68,9 +68,7 @@ const PracticeScreens = ({ navigation }: any) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ClassInfoHeader
-        className="A5"
-        courseName="MAS"
-        title="Practice"
+        title="Setting"
         navigation={navigation}
       />
       <Pressable
@@ -101,4 +99,4 @@ const PracticeScreens = ({ navigation }: any) => {
     </SafeAreaView>
   );
 };
-export default PracticeScreens;
+export default SettingScreens;

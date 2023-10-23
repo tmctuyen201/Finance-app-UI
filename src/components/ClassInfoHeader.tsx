@@ -6,16 +6,11 @@ import {
   View,
   StyleSheet,
   Text,
-  Platform,
   Dimensions,
-  TouchableOpacity,
-  Image,
 } from "react-native";
 import MenuButton from "./MenuButton";
 
 type headerTextProps = {
-  className: string;
-  courseName: string;
   title: string;
   navigation: any;
 };
@@ -23,8 +18,6 @@ type headerTextProps = {
 var width = Dimensions.get("window").width; //full width
 
 const ClassInfoHeader = ({
-  className,
-  courseName,
   title,
   navigation,
 }: headerTextProps) => {
@@ -33,11 +26,6 @@ const ClassInfoHeader = ({
       <View style={styles.headerTitles}>
         <MenuButton onPress={() => navigation.openDrawer()} />
         <Text style={styles.title}>{title}</Text>
-      </View>
-      
-      <View style={styles.headerText}>
-        <Text style={styles.classText}>Class {className}</Text>
-        <Text style={styles.courseText}>Course: {courseName}</Text>
       </View>
     </View>
   );

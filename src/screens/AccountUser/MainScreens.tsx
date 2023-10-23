@@ -1,25 +1,22 @@
 import React from "react";
-import { View, Text, Platform, StyleSheet } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-type TaskListProps = {
-    time?: string
-    date?: string
-    children: string
-    isDone: boolean
-}
-const TaskList = ({time, date, children, isDone = false}: TaskListProps) => {
-  return (
-    <View style={styles.task}>
-      <View>
-        <Text style={styles.taskTitle}>{children}</Text>
-        <Text style={styles.taskInfo}>Start: {time} | {date}</Text>
-      </View>
-      {isDone && <AntDesign name="check" size={50} color="#ffafcc" />}
-    </View>
-  );
-};
+import { View, Text, StyleSheet, Platform, Dimensions } from 'react-native'
+import ClassInfoHeader from "../../components/ClassInfoHeader";
 
-export default TaskList;
+const MainScreens = ({ navigation }: any) => {
+  return (
+    
+      <View style={{ flex: 1 , backgroundColor: 'white'}}>
+        
+        <ClassInfoHeader
+          title="Home"
+          navigation={navigation}
+        />
+      </View>
+  )
+}
+
+export default MainScreens;
+
 const styles = StyleSheet.create({
   taskTitle: {
     fontSize: 26,
@@ -31,6 +28,14 @@ const styles = StyleSheet.create({
     marginTop: 8,
     fontSize: 15,
     color: "#343a40",
+  },
+  scrollContainer: {
+    padding: 40,
+    paddingTop: 20,
+    display: "flex",
+    flexDirection: "column",
+    
+    height: 800,
   },
   task: {
     padding: 20,
@@ -44,5 +49,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  SafeArea: {
+    flex: 1,
+    backgroundColor: '#343a40',
   },
 });
